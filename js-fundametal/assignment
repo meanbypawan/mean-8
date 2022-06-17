@@ -1,0 +1,13 @@
+1. Write A script to build arithmetic
+calculator. Operation must be selected
+ by user
+
+2. Write A script to enter basic salary
+of an employee. If basic salary < 10000
+then hra = 10%, da =5% and ta=3% of basic
+salary is given to the employee otherwise
+hra = 5% and ta = 3% of basic salary 
+is given to the employee.
+Calculate gross salary of an employee.
+
+3. Write a script to build emi calculator
