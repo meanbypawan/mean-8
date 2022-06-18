@@ -1,0 +1,36 @@
+<script>
+    /*
+    Write A script to enter basic salary
+of an employee. If basic salary > 10000
+then hra = 10%, da =5% and ta=3% of basic
+salary is given to the employee otherwise
+hra = 5% and ta = 3% of basic salary 
+is given to the employee.
+Calculate gross salary of an employee.
+    
+  1. DRY (Do not repeat yourself)
+  2. KISS (Keep it simple & short)
+*/
+   var basicSalary = prompt("Enter A Salary");
+   basicSalary = basicSalary * 1;
+   var hra,ta,da,gs;
+   if(basicSalary>10000){
+     hra = (basicSalary*10)/100;
+     ta = (basicSalary*5)/100;
+     da = (basicSalary*3)/100;
+   }
+   else{
+      hra = (basicSalary*5)/100;
+      ta  = (basicSalary*3)/100;
+      da=0;
+    }
+     var gs = basicSalary + hra + ta + da;
+     document.write("<br>HRA : "+hra);
+     document.write("<br>TA : "+ta);
+     if(da!=0)
+       document.write("<br>DA : "+da);
+     document.write("<br>Gross Salary : "+gs);
+   
+</script>
+
+
