@@ -1,0 +1,11 @@
+<script>
+    var n = prompt("Enter A Number");
+    var i=2;
+    while(i<=parseInt(n/2)){
+      if(n%i==0)
+          break;
+      i++;
+    }
+    (i>parseInt(n/2) && n>1) ? document.write("Prime") :
+       document.write("Not Prime");  
+</script>
