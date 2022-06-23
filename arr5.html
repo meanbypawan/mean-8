@@ -1,0 +1,12 @@
+<script>
+    var customerList = [
+        {id:1, cname: 'ABC', age: 21},
+        {id:2, cname: 'XYZ', age: 25},
+        {id:3, cname: 'PQR', age: 30}
+    ];
+
+    for(var index in customerList){
+        var customer = customerList[index];
+        document.write(customer.id+" "+customer.cname+" "+customer.age+"<br>");
+    }
+</script>
