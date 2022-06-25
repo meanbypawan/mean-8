@@ -1,0 +1,21 @@
+<script>
+    /*
+    var x = ()=>{
+      document.write("Called.....");        
+    }
+   */
+    function f1(n,callback){
+      if( n<0 || n==undefined || n == null || typeof(n)!='number')
+        callback("Invalid Input (input must be greater then 0 and number)");
+      else
+        callback(null,n);        
+    }
+    
+    f1(20,(err,result)=>{
+       if(!err)
+         result%2 ? document.write("<br>ODD"):document.write("<br>EVEN");
+       else
+        document.write("<br>"+err);
+    });
+</script>
+ 

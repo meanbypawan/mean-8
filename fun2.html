@@ -1,0 +1,22 @@
+<script>
+    function f1(a,b,...c){
+      document.write("<br>a : "+a);
+      document.write("<br>b : "+b);
+      //document.write("<br>c : "+c);
+      for(var data of c)
+       document.write("<br>"+data);
+    }
+    //f1(20);
+    //f1(20,10);
+    //f1(20,10,5);
+    //f1();
+    f1(20,10,1,2,3,4,5);
+    /*
+    function add(a,b){
+      document.write("<br>a : "+a);
+      document.write("<br>b : "+b);
+      document.write("<br>Addition : "+(a+b));
+    }
+    add(20,10);
+    */
+</script>
