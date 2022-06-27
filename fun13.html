@@ -1,0 +1,20 @@
+<script>
+    function Arithmetic(){
+      this.setData = function(a,b){
+        this.a = a;
+        this.b = b;
+      }
+      this.setC = function(c){
+          this.c = c;
+      }
+      this.add = function(){
+          document.write("<br>Addition : "+(this.a + this.b));
+      }
+      
+    }
+
+    var obj = new Arithmetic(); // obj--> No props
+    obj.setData(20,10);// obj-->a=20,b=10
+    obj.add();
+    obj.sub();
+</script>

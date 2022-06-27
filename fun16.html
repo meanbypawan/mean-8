@@ -1,0 +1,16 @@
+<script>
+    // call stack
+    function f1(a){
+      var b = 200;
+      return function(){
+        document.write("<br>a : "+a);
+        document.write("<br>b : "+b);
+      }    
+    }
+
+    var inner = f1(100);
+    /*
+      1000 line of code
+    */
+    inner();
+</script>

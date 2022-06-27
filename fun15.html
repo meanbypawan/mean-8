@@ -1,0 +1,16 @@
+<script>
+    // f1 is outer function
+    // f2 is inner function
+    // inner can access outer function variables
+    // closure
+    function f1(a){
+        var b = 200;
+        function f2(){
+            document.write("<br>a : "+a);
+            document.write("<br>b : "+b);
+        }
+        f2();
+    }
+
+    f1(100);
+</script>
