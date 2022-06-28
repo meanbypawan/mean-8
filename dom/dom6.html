@@ -1,0 +1,55 @@
+<html>
+
+<body>
+    <script>
+      function changeTable(color1, color2){
+        var tableObj = document.getElementById("data-table");
+        //console.log(tableObj.rows);
+        for(var index=1; index<tableObj.rows.length; index++){
+           var row = tableObj.rows[index];
+           //row.style.backgroundColor = "red";
+           if(index%2)
+             row.style.backgroundColor = color1;
+           else
+           row.style.backgroundColor = color2; 
+        }
+      }
+    </script>
+    <button onclick="changeTable('red','blue')">Red-Blue</button>
+    <button onclick="changeTable('orange','pink')">Orange-pink</button>
+    <br><br>
+    <table id="data-table" border='1' width='100%'>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Age</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A</td>
+            <td>30</td>
+        </tr>
+    </table>
+</body>
+
+</html>
