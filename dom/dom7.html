@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <input onkeyup="addition(this)" id="first" type="text"/>
+        <br>
+        <input onkeyup="addition(this)" id="second" type="text"/>
+        <br>
+        <input onkeyup="addition(this)" id="third" type="text"/>
+        <br>
+        <br>
+        <p id="result">Result : </p>
+        <script>
+          var x = 0;  
+          function addition(currentInput){
+              x = x + currentInput.value*1;
+              var pResult = document.getElementById("result"); 
+              pResult.innerHTML = "Result : "+x;
+              /*
+              var first = document.getElementById("first").value;
+              var second = document.getElementById("second").value;
+              var third = document.getElementById("third").value;
+              var pResult = document.getElementById("result"); 
+              if(first == "")
+                first = 0;
+              if(second == "")
+                second = 0;
+              if(third == "")
+                third = 0;
+              var result = first*1 + second*1 + third*1;
+              
+              // div,span,small,p
+              pResult.innerHTML ="Result : "+result; 
+             */
+          }
+        </script>
+    </body>
+</html>
