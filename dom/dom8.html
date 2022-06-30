@@ -20,6 +20,11 @@
                 <small id="usernameError"></small>
             </div>
             <div class="form-group">
+                <label>Email</label>
+                 <input onkeyup="validateEmail()" type="text" id="email" class="form-control" />
+                 <small id="emailError"></small>
+            </div>
+            <div class="form-group">
                 <label>Password</label>
                 <input onkeyup="validatePassword()" type="password" id="password" class="form-control" />
                 <small id="passwordError"></small>
@@ -30,10 +35,98 @@
                 <small id="mobileError"></small>
             </div>
             <div class="form-group">
+                <label>Current Location</label>
+                <select onchange="validateLocation()" id="location" class="form-control">
+                    <option value="0">select location</option>
+                    <option value="1">Indore</option>
+                    <option value="2">Pune</option>
+                    <option value="3">Banglore</option>
+                </select>
+                <small id="locationError"></small>
+            </div>
+            <div class="form-group">
+                <label>Gender</label><br>
+                Male<input onchange="validateGender()" type="radio" name="gender" id="male"/>
+                Female<input onchange="validateGender()" type="radio" name="gender" id="female"/>
+                <br><small id="genderError"></small>
+            </div>
+            <div class="form-group">
+              <label>Upload</label>
+              <input name="profile" onchange="validateProfile()" type="file" id="profile"/><br>
+              <small id="profileError"></small>
+            </div>
+            <div class="form-group">
                 <button onclick="return validateData()" type="submit" class="btn btn-primary">Sign-up</button>
             </div>
         </form>
         <script>
+          function validateEmail(){
+              var status = true;
+              var email = document.getElementById("email").value;
+              var emailError = document.getElementById("emailError");
+              var regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+              if(!email.match(regex)){
+                status = false;
+                emailError.innerHTML = "Invalid email id";
+                emailError.style.color = "red";
+              }
+              else
+                emailError.innerHTML  = "";
+             return status;   
+          }  
+          function validateProfile(){
+              var status = true;
+              var fileObject = document.getElementById("profile");
+              var profileError = document.getElementById("profileError");
+              //console.log(fileObject.files[0].name);
+              if(fileObject.files[0]){
+                var filename = fileObject.files[0].name;
+                // filename = "index.jpeg" ,"ab.cd.jpeg"
+                var index = filename.lastIndexOf('.');
+                var extension = filename.substring(index);
+                if(!(extension == ".jpeg" || extension == ".png" || extension==".jpg")){
+                    status = false;
+                    profileError.innerHTML=  "Invalid file";
+                    profileError.style.color = "red";
+                }
+                else
+                profileError.innerHTML = "";
+              }
+              else{
+                  status = false;
+                  profileError.innerHTML=  "Invalid file";
+                  profileError.style.color = "red";
+
+              } 
+              return status;
+          }  
+          function validateGender(){
+              var status = true;
+              var male = document.getElementById("male").checked;
+              var female = document.getElementById("female").checked;
+              var genderError = document.getElementById("genderError");
+              if(male == false && female == false){
+                  status = false;
+                  genderError.innerHTML = "please select gender";
+                  genderError.style.color = "red";
+              } 
+              else
+               genderError.innerHTML = "";
+              return status;
+          }  
+          function validateLocation(){
+              var status = true;
+              var location = document.getElementById("location").value;
+              var locationError = document.getElementById("locationError");
+              if(location == "0"){
+                 status = false;
+                 locationError.innerHTML = "please select location";
+                 locationError.style.color = "red"; 
+              }
+              else
+               locationError.innerHTML = "";
+              return status; 
+          }  
           function validateMobile(){
               var status = true;
               var mobile= document.getElementById("mobile").value;
@@ -94,7 +187,7 @@
              return status;
           }  
           function validateUsername(){
-            var status = true
+            var status = true;
             var username = document.getElementById("username").value;
              var usernameError = document.getElementById("usernameError");
              username = username.trim();
@@ -111,7 +204,11 @@
              var usernameStatus = validateUsername();
              var passwordStatus = validatePassword();
              var mobileStatus = validateMobile();
-             if(usernameStatus && passwordStatus && mobileStatus)
+             var locationStatus = validateLocation();
+             var genderStatus = validateGender();
+             var profileStatus = validateProfile();
+             var emailStatus = validateEmail();
+             if(usernameStatus && emailStatus && passwordStatus && mobileStatus && locationStatus && genderStatus && profileStatus)
                return true;
              return false;
           }
