@@ -24,3 +24,24 @@
  // How to consume promise code
  p.then().catch();
  */
+let p = new Promise((resolve,reject)=>{
+   //resolve();
+   reject(); 
+});
+
+p.then(result=>{
+  console.log("Promise resolved..");
+}).catch(err=>{
+  console.log("Promise is rejected..");
+});
+
+
+
+
+
+
+
+
+
+
+
