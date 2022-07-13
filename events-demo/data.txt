@@ -1,0 +1,4 @@
+Node.Js is single threade
+Node.Js is javascript runtime enviornment
+Node.Js application is highly scalable and super fast.
+In Node.js Everywhere javascript is there..
