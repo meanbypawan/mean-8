@@ -1,0 +1,1 @@
+Js is dynamically language. Js is client side as well as server side scripting language
