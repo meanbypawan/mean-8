@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home page</title>
+  <%- include('_bootstrap.ejs')%>
+  
+</head>
+<body>
+<%- include('_navigation.ejs')%>
+
+<div class="container-fluid">
+   <table class="table">
+     <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Mobile</td>
+            <td>Age</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+     </thead>
+     <tbody>
+        <%
+          for(let user of userList){
+        %>
+          <tr>
+            <td><%=user.id%></td>
+            <td><%=user.name%></td>
+            <td><%=user.mobile%></td>
+            <td><%=user.age%></td>
+            <td><button class="btn btn-primary">Edit</button></td>
+            <td><button class="btn btn-danger">Delete</button></td>
+          </tr>
+        <%
+          }
+        %>
+     </tbody>
+   </table>
+</div>
+
+</body>
+</html>
